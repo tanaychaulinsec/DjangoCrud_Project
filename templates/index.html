@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+
+<body>
+{% block content %}
+<style>
+label{
+    cursor: pointer;
+    color: #555;
+    display: block;
+    padding: 10px;
+    margin: 3px;
+}
+
+</style>
+<form method="post" action="/add">
+    {% csrf_token %}
+
+    <div class="col">
+    <label>ID: </label>
+    <div class="col-sm-4" >{{ form.eid }}</div>
+    <label>Name: </label>
+    <div class="col-sm-4" >{{ form.ename }}</div>
+    <label>Email:</label>
+    <div class="col-sm-4" > {{ form.email }}</div>
+    <label>Contact:</label>
+    <div class="col-sm-4" > {{ form.econtact }}</div>
+    </div>
+    <div>
+        <button class="btn btn-info" type="submit">Add</button>
+    </div>
+
+</form>
+
+{% endblock %}
+</body>
